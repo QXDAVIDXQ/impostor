@@ -1,46 +1,29 @@
 const words = [
-  "Apfel", "Banane", "Schule", "Auto", "Tisch", "Stuhl", "Lampe", "Fernseher", "Zug", "Flugzeug",
-  "Bus", "Handy", "Buch", "Baum", "Haus", "Blume", "Hund", "Katze", "Elefant", "Maus",
-  "Fisch", "Brot", "Pizza", "Eis", "Käse", "Wasser", "Milch", "Uhr", "Brille", "Jacke",
-  "Hose", "Schuh", "Ball", "Teppich", "Fenster", "Türe", "Bett", "Sofa", "Regal", "Tasse",
-  "Teller", "Gabel", "Löffel", "Messer", "Topf", "Pfanne", "Herd", "Kühlschrank", "Schokolade", "Erdbeere",
-  "Orange", "Zitrone", "Karotte", "Gurke", "Salat", "Paprika", "Tomate", "Regen", "Sonne", "Wolke",
-  "Schnee", "Wind", "Himmel", "Stern", "Mond", "Planet", "Rakete", "Computer", "Tastatur", "Maus (Computer)",
-  "Monitor", "Spiel", "Puppe", "Lego", "Puzzle", "Schere", "Kleber", "Papier", "Heft", "Stift",
-  "Lineal", "Radiergummi", "Tafel", "Rucksack", "Fahrrad", "Roller", "Motorrad", "Polizei", "Feuerwehr", "Arzt",
-  "Lehrer", "Schüler", "König", "Prinzessin", "Pirat", "Drache", "Gespenst", "Zelt", "Camping", "Wald",
-  "Wiese", "Fluss", "Meer", "Strand", "Insel", "Schiff", "U-Boot", "Brücke", "Tunnel", "Stadt",
-  "Dorf", "Land", "Zoo", "Bauernhof", "Traktor", "Heu", "Stall", "Huhn", "Ente", "Schwein",
-  "Kuh", "Pferd", "Schaf", "Ziege", "Löwe", "Tiger", "Affe", "Krokodil", "Pinguin", "Robbe",
-  "Bär", "Schlange", "Kamel", "Känguru", "Zebra", "Giraffe", "Nashorn", "Nilpferd", "Biene", "Wespe",
-  "Schmetterling", "Käfer", "Spinne", "Ameise", "Mücke", "Regenbogen", "Blitz", "Donner", "Sturm", "Hagel",
-  "Nebel", "Vulkan", "Höhle", "Berg", "Tal", "Felsen", "Sand", "Kies", "Schlamm", "Dschungel",
-  "Savanne", "Wüste", "Eisberg", "Iglu", "Schneemann", "Ski", "Schlitten", "Snowboard", "Mütze", "Handschuh",
-  "Schal", "Mantel", "Badehose", "Bikini", "Schwimmflügel", "Sonnencreme", "Sonnenbrille", "Zähne", "Zahnarzt", "Krankenhaus",
-  "Operation", "Spritze", "Verband", "Tablette", "Pflaster", "Impfung", "Sport", "Ballspiel", "Tennis", "Fußball",
-  "Basketball", "Handball", "Schwimmen", "Boxen", "Fechten", "Turnen", "Reiten", "Klettern", "Wandern", "Rennen",
-  "Springen", "Tauchen", "Surfen", "Skaten", "Tanzen", "Musik", "Gitarre", "Klavier", "Geige", "Trommel",
-  "Flöte", "Mikrofon", "Lied", "Konzert", "Bühne", "Vorhang", "Theater", "Schauspieler", "Film", "Kamera",
-  "Leinwand", "Kino", "Popcorn", "Eintrittskarte", "Geld", "Bank", "Münze", "Schein", "Konto", "Sparkasse",
-  "Tasche", "Geldbeutel", "Schlüssel", "Schloss", "Zaun", "Garten", "Blumentopf", "Gießkanne", "Rasenmäher", "Schaufel",
-  "Besen", "Eimer", "Schwamm", "Seife", "Shampoo", "Zahnbürste", "Handtuch", "Dusche", "Badewanne", "Klo",
-  "Spiegel", "Decke", "Wand", "Boden", "Tapete", "Steckdose", "Kabel", "Strom", "Batterie", "Kerze",
-  "Feuer", "Feuerzeug", "Streichholz", "Rauch", "Alarm", "Sirene", "Notruf", "Telefon", "Adresse", "Brief",
-  "Paket", "Post", "Karte", "Umschlag", "Stempel", "Zeitung", "Buchladen", "Supermarkt", "Kasse", "Einkaufswagen",
-  "Produkt", "Preis", "Angebot", "Werbung", "Plakat", "Schild", "Straße", "Ampel", "Zebrastreifen", "Parkplatz",
-  "Garage", "Werkstatt", "Öl", "Benzin", "Reifen", "Lenkrad", "Hupe", "Blinker", "Bremse", "Motor",
-  "Fensterheber", "Gurt", "Nummernschild", "Fahrkarte", "Haltestelle", "Fahrplan", "Bahnhof", "Ticketautomat", "Rolltreppe", "Aufzug",
-  "Treppe", "Geländer", "Gebäude", "Büro", "Schreibtisch", "Laptop", "Aktenordner", "Dokument", "Drucker", "Scanner",
-  "Kopierer", "Lehrerzimmer", "Klassenzimmer", "Turnhalle", "Pausenhof", "Glocke", "Stundenplan", "Hausaufgabe", "Pause", "Ferien",
-  "Urlaub", "Pass", "Koffer", "Reiseführer", "Hotel", "Rezeption", "Zimmer", "Bettdecke", "Matratze", "Kopfkissen",
-  "Föhn", "Fernbedienung", "Minibar", "Balkon", "Ausflug", "Stadtplan", "Museum", "Ausstellung", "Bild", "Statue",
-  "Denkmal", "Kirche", "Turm", "Glocke", "Fensterrose", "Orgel", "Priester", "Bibel", "Kreuz", "Engel",
-  "Altar", "Gebet", "Segen", "Hochzeit", "Taufe", "Geburtstag", "Kuchen", "Geschenk", "Schleife", "Party",
-  "Luftballon", "Konfetti", "Spielzeug", "Clown", "Zauberer", "Show", "Spaß", "Lachen", "Freunde", "Familie",
-  "Bruder", "Schwester", "Cousin", "Cousine", "Oma", "Opa", "Tante", "Onkel", "Eltern", "Kind",
-  "Baby", "Junge", "Mädchen", "Nachbar", "Freund", "Feind", "Tierarzt", "Bäcker", "Metzger", "Koch"
+"Apfel","Auto","Ball","Banane","Bett","Buch","Bus","Computer","Dose","Ei","Eimer","Elefant","Ente","Erde","Fahrrad","Fernseher","Fenster","Feuer","Fisch","Flasche",
+"Flugzeug","Foto","Gabel","Garten","Gebäude","Geld","Glas","Hahn","Handy","Haus","Hemd","Hose","Hund","Jacke","Junge","Kamera","Kaninchen","Katze","Kerze","Kette",
+"Kind","Kiste","Kleid","Koffer","Kuchen","Kuh","Lampe","Löffel","Löwe","Mädchen","Maler","Maus","Meer","Milch","Müll","Mütze","Nase","Nuss","Ofen","Oma","Opa",
+"Orangen","Paket","Papier","Pferd","Pilz","Pinguin","Pizza","Pullover","Radio","Rakete","Regal","Regen","Reis","Rucksack","Salat","Salz","Sauerstoff","Schaf",
+"Schere","Schirm","Schlange","Schlüssel","Schnee","Schrank","Schuh","Schule","Schwamm","Seife","Sessel","Sonne","Spaghetti","Spiel","Spielplatz","Stern","Stift",
+"Stuhl","Tasche","Tasse","Teller","Tiger","Tisch","Toaster","Tomate","Topf","Traktor","Treppen","Trommel","Tuch","Tür","Uhr","Vase","Wald","Wasser","Wolke",
+"Wurst","Zahnbürste","Zahn","Zebra","Zelt","Zitrone","Zug","Zwiebel","Bäckerei","Tankstelle","Kino","Apotheke","Fluss","Berg","Straße","Laterne","Brief","Zeitung",
+"Schloss","Brücke","Kirche","Markt","Büro","Treppe","Wiese","Kreide","Schreibtisch","Lehrer","Schüler","Fenstersims","Mülltonne","Tafel","Klassenzimmer","Schere",
+"Kleber","Papierkorb","Radiergummi","Lineal","Malkasten","Heft","Ordner","Kugelschreiber","Pinsel","Tintenpatrone","Drucker","Laptop","Mikroskop","Schulranzen",
+"Turnbeutel","Sporthalle","Küche","Esszimmer","Wohnzimmer","Badewanne","Dusche","Waschmaschine","Toilette","Spiegel","Kissen","Decke","Teller","Besteck",
+"Streichholz","Kerzenständer","Ventilator","Heizung","Kamin","Fernbedienung","Fernsehsender","Steckdose","Kabel","Batterie","Tastatur","Mauspad","Joystick",
+"Smartphone","Tablet","Bildschirm","Webcam","Lautsprecher","Kopfhörer","Router","Internet","Download","Upload","Browser","E-Mail","Suchmaschine","Online-Shop",
+"Spielkonsole","Controller","Joystick","Mikrofon","Zoom","Team","Hausaufgaben","Ferien","Zeugnis","Noten","Pause","Tageslicht","Sturm","Wolkenbruch","Gewitter",
+"Schneesturm","Eiszapfen","Blitz","Tornado","Regenbogen","Hagel","Nebel","Sonnenaufgang","Sonnenuntergang","Mond","Sterne","Weltall","Raketenbasis","Raumstation",
+"Astronaut","Satellit","Teleskop","Sternschnuppe","Meteor","Komet","Galaxie","Mars","Venus","Jupiter","Saturn","Uranus","Neptun","Merkur","Erde","Sonnensystem",
+"Universum","Gravitation","Lichtjahr","Weltraumteleskop","Raumanzug","Raumschiff","Raumfähre","Andromedagalaxie","Raumkapsel","Countdown","Startbahn","Zündstufe",
+"Kommandozentrale","Astronomie","Schwerkraft","Ozon","Polarkreis","Wüste","Ozean","Insel","Gletscher","Höhle","Waldweg","Bucht","Klippe","Wolkenkratzer",
+"Stadion","Museum","Zoo","Aquarium","Flughafen","Bahnhof","Haltestelle","Supermarkt","Parkplatz","Fußgängerzone","Rolltreppe","Ampel","Zebrastreifen","Bushaltestelle",
+"Bücherei","Turnhalle","Sportplatz","Schwimmbad","Spielplatz","Klettergerüst","Rutsche","Schaukel","Sandkasten","Karussell","Wippe","Springseil","Ballspiel",
+"Fußball","Handball","Basketball","Volleyball","Tennis","Badminton","Hockey","Eishockey","Skifahren","Snowboard","Schlitten","Schneeball","Schneemann","Iglu",
+"Schlittschuh","Schneeanzug","Mütze","Handschuhe","Schal","Winterjacke","Thermohose","Schneestiefel","Skihelm","Skibrille","Lawine","Pistenraupe","Sessellift",
+"Gondel","Skihütte","Piste","Abfahrt","Langlauf","Eisbahn","Eiswürfel","Eiscreme","Eisdiele","Eissorte","Waffel","Becher","Löffel","Topping","Streusel","Sahne",
+"Sirup","Fruchtsoße","Schokoladensoße","Vanille","Schoko","Erdbeere","Karamell","Zitrone","Melone","Mango","Himbeere","Blaubeere","Kokos","Nuss","Keksstückchen"
 ];
-
+  
 let players = 0;
 let currentPlayer = 1;
 let roles = [];
@@ -59,19 +42,53 @@ const revealButton = document.getElementById("reveal-button");
 const impostorList = document.getElementById("impostor-list");
 const restartButton = document.getElementById("restart-button");
 
-// Spieleranzahl auswählen
+// Buttons für Spieleranzahl + Info wie viele Impostors
 for (let i = 4; i <= 10; i++) {
   const btn = document.createElement("button");
-  btn.textContent = `${i} Spieler`;
-  btn.onclick = () => startGame(i);
+  let info = "";
+
+  if (i === 6) info = " – 1 oder 2 Impostors möglich";
+  else if (i === 9) info = " – 2 oder 3 Impostors möglich";
+  else if (i <= 6) info = " – 1 Impostor";
+  else if (i <= 9) info = " – 2 Impostors";
+  else info = " – 3 Impostors";
+
+  btn.textContent = `${i} Spieler${info}`;
+  btn.onclick = () => {
+    if (i === 6) {
+      chooseImpostorCount(i, [1, 2]);
+    } else if (i === 9) {
+      chooseImpostorCount(i, [2, 3]);
+    } else {
+      impostorCount = i <= 6 ? 1 : i <= 9 ? 2 : 3;
+      startGame(i);
+    }
+  };
   playerButtons.appendChild(btn);
+}
+
+// Auswahl bei 6 oder 9 Spielern
+function chooseImpostorCount(playerNum, options) {
+  playerButtons.innerHTML = "";
+  const msg = document.createElement("p");
+  msg.textContent = `Wie viele Impostors bei ${playerNum} Spielern?`;
+  playerButtons.appendChild(msg);
+
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.textContent = `${opt} Impostor${opt > 1 ? "s" : ""}`;
+    btn.onclick = () => {
+      impostorCount = opt;
+      startGame(playerNum);
+    };
+    playerButtons.appendChild(btn);
+  });
 }
 
 function startGame(playerCount) {
   players = playerCount;
   currentPlayer = 1;
   chosenWord = words[Math.floor(Math.random() * words.length)];
-  impostorCount = players <= 6 ? 1 : players <= 9 ? 2 : 3;
 
   roles = Array(players).fill(chosenWord);
   let impostorSet = new Set();
