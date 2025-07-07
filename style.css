@@ -15,13 +15,18 @@ button {
   margin: 10px;
   font-size: 1em;
   cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #555;
 }
 
 #word-box {
-  margin: 20px auto;
-  padding: 20px;
-  font-size: 1.5em;
-  background-color: #fff;
-  border: 2px solid #333;
-  width: fit-content;
+  font-size: 2em;
+  margin: 20px 0;
 }
