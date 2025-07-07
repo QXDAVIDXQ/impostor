@@ -175,7 +175,8 @@ function updatePlayerLabel() {
 }
 
 showButton.onclick = () => {
-  wordBox.textContent = roles[currentPlayer - 1];
+  const role = roles[currentPlayer - 1];
+  wordBox.textContent = role === "Impostor" ? "Impostor" : chosenWord;
   wordBox.classList.remove("hidden");
   showButton.classList.add("hidden");
   hideButton.classList.remove("hidden");
