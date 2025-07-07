@@ -2,31 +2,42 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Impostor-Spiel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="app">
-    <h1>🎭 Impostor-Spiel</h1>
-    <div id="setup">
-      <p>Wie viele Spieler?</p>
-      <div id="player-buttons"></div>
-    </div>
-
-    <div id="game" class="hidden">
-      <h2 id="player-label"></h2>
-      <button id="show-button">Anzeigen</button>
-      <div id="word-box" class="hidden"></div>
-      <button id="next-button" class="hidden">Weitergeben</button>
-    </div>
-
-    <div id="reveal" class="hidden">
-      <button id="reveal-button">Impostor aufdecken</button>
-      <div id="impostor-list" class="hidden"></div>
-      <button id="restart-button">Neue Runde</button>
-    </div>
+  <div id="setup">
+    <h1>Wie viele Spieler?</h1>
+    <div id="player-buttons"></div>
   </div>
+
+  <div id="name-choice" class="hidden">
+    <h2>Namen eingeben?</h2>
+    <button onclick="useNames = true; startNameInput()">Ja</button>
+    <button onclick="skipNames()">Nein</button>
+  </div>
+
+  <form id="name-form" class="hidden">
+    <h2 id="name-prompt">Name für Spieler</h2>
+    <input id="name-input" type="text" required />
+    <button id="name-submit">Weiter</button>
+  </form>
+
+  <div id="game" class="hidden">
+    <h2 id="player-label"></h2>
+    <button id="show-button">Anzeigen</button>
+    <div id="word-box" class="hidden"></div>
+    <button id="next-button" class="hidden">Weitergeben</button>
+  </div>
+
+  <div id="reveal" class="hidden">
+    <button id="reveal-button">Impostor aufdecken</button>
+    <div id="impostor-list" class="hidden"></div>
+    <button id="restart-button">Neue Runde</button>
+    <button id="restart-same-button">Neue Runde im gleichen Modus</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
